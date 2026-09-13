@@ -1,0 +1,6 @@
+{
+  "name": "LUMINA - Learning Management Platform",
+  "description": "A modern platform empowering India's Official Statistical System with iGOT pathways, live notifications, statistical metrics, and institutional authentication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

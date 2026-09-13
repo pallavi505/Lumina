@@ -1,0 +1,238 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "Registered learner, faculty, administrator, and cadre officer accounts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "avatar": { "type": "string" },
+        "title": { "type": "string" },
+        "badge": { "type": "string" },
+        "bio": { "type": "string" },
+        "cadre": { "type": "string" },
+        "department": { "type": "string" },
+        "institution": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "status": { "type": "string" },
+        "permissions": { "type": "object" },
+        "targetHoursPerWeek": { "type": "number" },
+        "interests": { "type": "string" },
+        "streakDays": { "type": "number" },
+        "coursesCount": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "email", "name", "role"]
+    },
+    "approvals": {
+      "title": "Approval Requests",
+      "description": "Officer accreditation dossiers and registration approval requests",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "cadre": { "type": "string" },
+        "department": { "type": "string" },
+        "institution": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "idVerificationStatus": { "type": "string" },
+        "govEmailVerified": { "type": "boolean" },
+        "requestedRole": { "type": "string" },
+        "requestedAccessTier": { "type": "string" },
+        "submissionDate": { "type": "string" },
+        "statementOfIntent": { "type": "string" },
+        "documents": { "type": "array" },
+        "status": { "type": "string" },
+        "reviewedAt": { "type": "string" },
+        "reviewedBy": { "type": "string" },
+        "rejectionReason": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "status"]
+    },
+    "broadcasts": {
+      "title": "Broadcast Directives",
+      "description": "Platform-wide and targeted institutional broadcast directives and alerts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "priority": { "type": "string" },
+        "targetAudience": { "type": "string" },
+        "broadcastType": { "type": "string" },
+        "actionText": { "type": "string" },
+        "targetView": { "type": "string" },
+        "publishedAt": { "type": "string" },
+        "author": { "type": "string" },
+        "pinned": { "type": "boolean" },
+        "sentCount": { "type": "number" },
+        "openRate": { "type": "number" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "title", "description", "category", "priority"]
+    },
+    "materials": {
+      "title": "Course Materials",
+      "description": "Curricular lecture files, presentations, slide decks, and dataset notebooks",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "type": { "type": "string" },
+        "moduleId": { "type": "string" },
+        "moduleTitle": { "type": "string" },
+        "courseId": { "type": "string" },
+        "courseTitle": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "durationOrPages": { "type": "string" },
+        "uploadedAt": { "type": "string" },
+        "status": { "type": "string" },
+        "author": { "type": "string" },
+        "url": { "type": "string" },
+        "tags": { "type": "array" },
+        "downloadsCount": { "type": "number" }
+      },
+      "required": ["id", "title", "type", "courseId"]
+    },
+    "trainee_records": {
+      "title": "Trainee Cohort Records",
+      "description": "Faculty tracking records for officer course progress and assessments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "cadre": { "type": "string" },
+        "courseId": { "type": "string" },
+        "courseTitle": { "type": "string" },
+        "currentModule": { "type": "string" },
+        "participationRate": { "type": "number" },
+        "completionRate": { "type": "number" },
+        "avgAssessmentScore": { "type": "number" },
+        "finalExamScore": { "type": "number" },
+        "status": { "type": "string" },
+        "lastActive": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "courseId"]
+    },
+    "courses": {
+      "title": "Courses",
+      "description": "Courses and learning curricula",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "code": { "type": "string" },
+        "provider": { "type": "string" },
+        "curriculum": { "type": "string" },
+        "duration": { "type": "string" },
+        "level": { "type": "string" },
+        "competencies": { "type": "number" },
+        "enrolledCount": { "type": "number" },
+        "rating": { "type": "number" },
+        "badge": { "type": "string" },
+        "instructorId": { "type": "string" },
+        "instructorName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title"]
+    },
+    "enrollments": {
+      "title": "Enrollments",
+      "description": "User course enrollments and progress tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "courseId": { "type": "string" },
+        "progress": { "type": "number" },
+        "completed": { "type": "boolean" },
+        "lastAccessed": { "type": "string" }
+      },
+      "required": ["id", "userId", "courseId"]
+    },
+    "notes": {
+      "title": "Course Notes",
+      "description": "Timestamped notes taken by scholars during course lectures",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "courseId": { "type": "string" },
+        "chapterId": { "type": "string" },
+        "chapterIndex": { "type": "number" },
+        "chapterTitle": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "timestampSeconds": { "type": "number" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "courseId", "chapterId", "text"]
+    },
+    "certificates": {
+      "title": "Issued Certificates",
+      "description": "Verifiable certificates of mastery earned by scholars upon passing video completion quizzes",
+      "type": "object",
+      "properties": {
+        "certificateId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "studentId": { "type": "string" },
+        "courseTitle": { "type": "string" },
+        "courseId": { "type": "string" },
+        "completedDate": { "type": "string" },
+        "grade": { "type": "string" },
+        "badgeEarned": { "type": "string" },
+        "issuer": { "type": "string" }
+      },
+      "required": ["certificateId", "studentName", "courseTitle", "courseId", "completedDate"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile collection"
+    },
+    "/approvals/{approvalId}": {
+      "schema": "approvals",
+      "description": "Pending and reviewed officer accreditation requests"
+    },
+    "/broadcasts/{broadcastId}": {
+      "schema": "broadcasts",
+      "description": "Platform broadcast alerts and directives"
+    },
+    "/materials/{materialId}": {
+      "schema": "materials",
+      "description": "Faculty repository materials"
+    },
+    "/trainee_records/{recordId}": {
+      "schema": "trainee_records",
+      "description": "Trainee cohort performance records"
+    },
+    "/courses/{courseId}": {
+      "schema": "courses",
+      "description": "Course curriculum repository"
+    },
+    "/enrollments/{enrollmentId}": {
+      "schema": "enrollments",
+      "description": "User enrollments"
+    },
+    "/notes/{noteId}": {
+      "schema": "notes",
+      "description": "User lecture notes"
+    },
+    "/certificates/{certificateId}": {
+      "schema": "certificates",
+      "description": "Issued certificates"
+    }
+  }
+}
